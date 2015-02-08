@@ -1,5 +1,5 @@
 #include <QtGui/QApplication>
-#include <buildit_ros/start_screen.h>
+#include <buildit_ui/start_screen.h>
 #include <ros/ros.h>
 
 int main(int argc, char *argv[])

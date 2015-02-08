@@ -1,4 +1,4 @@
-#include <buildit_ros/buildit_config.h>
+#include <buildit_ui/buildit_config.h>
 
 void operator >> (const YAML::Node& node, MountPoints& mount_points);	
 void operator >> (const YAML::Node& node, MountPoint& mount_point);

@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <package>
-  <name>buildit_ros</name>
+  <name>buildit_ui</name>
   <version>1.0.0</version>
-  <description>The buildit_ros package allows you to build a robot with a GUI!</description>
+  <description>The buildit_ui package allows you to build a robot with a GUI!</description>
 
   <maintainer email="dash@clearpathrobotics.com">Devon Ash</maintainer>
 
