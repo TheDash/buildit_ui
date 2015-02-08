@@ -24,7 +24,15 @@ qt4_wrap_cpp(MOC_FILES
     include/${PROJECT_NAME}/add_sensors_tab_widget.h
     include/${PROJECT_NAME}/mount_points_tab_widget.h
     include/${PROJECT_NAME}/export_robot_tab_widget.h
-    include/${PROJECT_NAME}/buildit_config.h
+)
+
+qt4_wrap_cpp(MOC2_FILES
+   include/${PROJECT_NAME}/buildit_config.h
+)
+
+set(SRC_FILES
+   src/buildit_config.cpp
+   ${MOC2_FILES}
 )
 
 set(SOURCE_FILES
@@ -35,22 +43,17 @@ set(SOURCE_FILES
     src/add_sensors_tab_widget.cpp
     src/mount_points_tab_widget.cpp
     src/export_robot_tab_widget.cpp
-    src/buildit_config.cpp
     ${MOC_FILES}
 )
 
-add_library(buildit_config src/buildit_config.cpp)
+add_library(buildit_config ${SRC_FILES})
 target_link_libraries(buildit_config ${catkin_LIBRARIES} yaml-cpp ${QT_LIBRARIES} default_plugin)
 add_dependencies(buildit_config buildit_msgs_generate_messages_cpp buildit_msgs_gencpp ${catkin_EXPORTED_TARGETS})
 
-#add_executable(interactive_mount_points_server src/interactive_mount_points_server.cpp )
-#target_link_libraries(interactive_mount_points_server ${catkin_LIBRARIES} ${QT_LIBRARIES} buildit_config yaml-cpp)
-#add_dependencies(interactive_mount_points_server interactive_mount_points_server_gencpp ${catkin_EXPORTED_TARGETS} ${PROJECT_NAME}_gencpp)
-
 add_executable(${PROJECT_NAME} ${SOURCE_FILES})
 #add_library(${PROJECT_NAME} ${SOURCE_FILES})
-target_link_libraries(${PROJECT_NAME} ${QT_LIBRARIES} ${catkin_LIBRARIES} default_plugin yaml-cpp)
-add_dependencies(${PROJECT_NAME} ${catkin_EXPORTED_TARGETS})
+target_link_libraries(${PROJECT_NAME} ${QT_LIBRARIES} ${catkin_LIBRARIES} buildit_config default_plugin yaml-cpp)
+add_dependencies(${PROJECT_NAME} ${catkin_EXPORTED_TARGETS} )
 
 install(TARGETS
 	${PROJECT_NAME} buildit_config
