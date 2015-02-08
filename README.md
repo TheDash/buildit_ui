@@ -9,4 +9,4 @@ Usage
 =========================
 
 
-roslaunch buildit_ros buildit_editor.launch
+roslaunch buildit_ui buildit_editor.launch
