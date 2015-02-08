@@ -4,8 +4,6 @@
 #include <QTabWidget>
 #include <QString>
 #include <buildit_ui/mount_points_tab_widget.h>
-#include <buildit_ui/add_sensors_tab_widget.h>
-#include <buildit_ui/export_robot_tab_widget.h>
 
 class StartScreenTabWidget : public QTabWidget
 {
@@ -16,12 +14,8 @@ class StartScreenTabWidget : public QTabWidget
    private:
 
         MountPointsTabWidget * mount_points_widget;
-        AddSensorsTabWidget * add_sensors_widget;
-        ExportRobotTabWidget * export_robot_widget;
 
         void addMountPointsTabWidget();
-        void addSensorsTabWidget();
-        void addExportRobotTabWidget();
 
 };
 

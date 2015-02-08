@@ -21,9 +21,7 @@ qt4_wrap_cpp(MOC_FILES
     include/${PROJECT_NAME}/start_screen.h
     include/${PROJECT_NAME}/myviz.h
     include/${PROJECT_NAME}/start_screen_tab_widget.h
-    include/${PROJECT_NAME}/add_sensors_tab_widget.h
     include/${PROJECT_NAME}/mount_points_tab_widget.h
-    include/${PROJECT_NAME}/export_robot_tab_widget.h
 )
 
 qt4_wrap_cpp(MOC2_FILES
@@ -40,14 +38,12 @@ set(SOURCE_FILES
     src/start_screen.cpp
     src/myviz.cpp
     src/start_screen_tab_widget.cpp
-    src/add_sensors_tab_widget.cpp
     src/mount_points_tab_widget.cpp
-    src/export_robot_tab_widget.cpp
     ${MOC_FILES}
 )
 
 add_library(buildit_config ${SRC_FILES})
-target_link_libraries(buildit_config ${catkin_LIBRARIES} yaml-cpp ${QT_LIBRARIES} default_plugin)
+target_link_libraries(buildit_config ${catkin_LIBRARIES} yaml-cpp ${QT_LIBRARIES})
 add_dependencies(buildit_config buildit_msgs_generate_messages_cpp buildit_msgs_gencpp ${catkin_EXPORTED_TARGETS})
 
 add_executable(${PROJECT_NAME} ${SOURCE_FILES})
@@ -56,7 +52,7 @@ target_link_libraries(${PROJECT_NAME} ${QT_LIBRARIES} ${catkin_LIBRARIES} buildi
 add_dependencies(${PROJECT_NAME} ${catkin_EXPORTED_TARGETS} )
 
 install(TARGETS
-	${PROJECT_NAME} buildit_config
+	${PROJECT_NAME} #buildit_config
 	ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
 	LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
 	RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
@@ -64,5 +60,3 @@ install(TARGETS
 
 install(DIRECTORY include/ DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION})
 install(DIRECTORY launch/  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION})
-install(DIRECTORY ui/      DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION})
-

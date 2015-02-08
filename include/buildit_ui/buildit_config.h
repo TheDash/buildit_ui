@@ -7,8 +7,8 @@
 #include <fstream>
 #include <iostream>
 
-//#include <QString>
-//#include <QProcess>
+#include <QString>
+#include <QProcess>
 
 #include <ros/ros.h>
 
