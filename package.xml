@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<package>
+  <name>buildit_ros</name>
+  <version>1.0.0</version>
+  <description>The buildit_ros package allows you to build a robot with a GUI!</description>
+
+  <maintainer email="dash@clearpathrobotics.com">Devon Ash</maintainer>
+
+  <license>GPL. You may contact for a waiver on this license.</license>
+
+  <author email="dash@clearpathrobotics.com">Devon Ash</author>
+  <author email="bvondervoort@clearpathrobotics.com">Bryce Vondervoort</author>
+  <author email="mtanguay@clearpathrobotics.com">Matthieu Tanguay</author>
+  <author email="jschmidt@clearpathrobotics.com">Jeff Schmidt</author>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <build_depend>buildit_msgs</build_depend>
+  <run_depend>buildit_msgs</run_depend>
+
+  <build_depend>rviz</build_depend>
+  <run_depend>rviz</run_depend>
+  
+  <build_depend>moveit_core</build_depend>
+  <run_depend>moveit_core</run_depend>
+
+  <build_depend>roscpp</build_depend>
+  <run_depend>roscpp</run_depend>
+ 
+  <build_depend>message_generation</build_depend>
+  <run_depend>message_generation</run_depend>
+
+  <build_depend>message_runtime</build_depend>
+  <run_depend>message_runtime</run_depend>
+
+  <build_depend>visualization_msgs</build_depend>
+  <run_depend>visualization_msgs</run_depend>
+
+  <export>
+  </export>
+</package>
