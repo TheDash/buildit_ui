@@ -13,11 +13,15 @@
 #include <ros/ros.h>
 
 #include <geometry_msgs/Pose.h>
+
 #include <buildit_msgs/GetInteractiveMarkers.h>
+#include <buildit_ui/objects/mount_point_marker.h>
+#include <buildit_ui/objects/mount_point.h>
+#include <buildit_ui/objects/mount_points.h>
 
 #include <yaml-cpp/yaml.h>
-#include <yaml-cpp/iterator.h>
-#include <yaml-cpp/node.h>
+#include <yaml-cpp/node/iterator.h>
+#include <yaml-cpp/node/node.h>
 
 class BuilditConfig 
 {
@@ -32,9 +36,9 @@ class BuilditConfig
       inline bool canEditPositions() { return edit_positions == "true" ? true : false; }
       inline bool canEditOrientation() { return edit_orientation == "true" ? true : false; }
       inline bool canEditModel() { return modify_model == "true" ? true : false; }
-      MountPoints mount_points;
+      MountPoints::MountPoints mount_points;
 
-      inline MountPoints getMountPoints() { return mount_points; }
+      inline MountPoints::MountPoints getMountPoints() { return mount_points; }
       //inline std::map<std::string, std::vector<geometry_msgs::Pose> > getMountPoints() { return mount_points; }
     
       void load(std::string name);
@@ -45,8 +49,7 @@ class BuilditConfig
       std::string name;
       std::string model_path;
       // A map of links that have mount points, and where those mount points are positioned.
-      //MountPointsMap mount_points;
-      std::vector<MountPointMarker> mount_point_markers;
+      std::vector<MountPointMarker::MountPointMarker> mount_point_markers;
       std::string edit_positions;
       std::string edit_orientation;
       std::string modify_model;
