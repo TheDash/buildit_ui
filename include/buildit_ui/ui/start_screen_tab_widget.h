@@ -3,7 +3,7 @@
 
 #include <QTabWidget>
 #include <QString>
-#include <buildit_ui/mount_points_tab_widget.h>
+#include <buildit_ui/ui/mount_points_tab_widget.h>
 
 class StartScreenTabWidget : public QTabWidget
 {
