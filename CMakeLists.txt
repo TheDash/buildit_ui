@@ -26,10 +26,16 @@ qt4_wrap_cpp(MOC_FILES
 
 qt4_wrap_cpp(MOC2_FILES
    include/${PROJECT_NAME}/buildit_config.h
+   include/${PROJECT_NAME}/mount_point.h
+   include/${PROJECT_NAME}/mount_points.h
+   include/${PROJECT_NAME}/mount_point_marker.h
 )
 
 set(SRC_FILES
    src/buildit_config.cpp
+   src/mount_point.cpp
+   src/mount_point_marker.cpp
+   src/mount_points.cpp
    ${MOC2_FILES}
 )
 
