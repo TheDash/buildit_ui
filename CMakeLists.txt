@@ -26,15 +26,15 @@ qt4_wrap_cpp(UI_FILES
 qt4_wrap_cpp(OBJECT_FILES
    include/${PROJECT_NAME}/objects/buildit_config.h
    include/${PROJECT_NAME}/objects/mount_point.h
-   include/${PROJECT_NAME}/objects/mount_points.h
    include/${PROJECT_NAME}/objects/mount_point_marker.h
+   include/${PROJECT_NAME}/objects/mount_point_map.h
 )
 
 set(OBJECT_SRC_FILES
    src/objects/buildit_config.cpp
    src/objects/mount_point.cpp
-   src/objects/mount_points.cpp
    src/objects/mount_point_marker.cpp
+   src/objects/mount_point_map.cpp   
    ${OBJECT_FILES}
 )
 
