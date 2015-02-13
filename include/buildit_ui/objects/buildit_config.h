@@ -20,8 +20,8 @@
 #include <buildit_ui/objects/mount_points.h>
 
 #include <yaml-cpp/yaml.h>
-#include <yaml-cpp/node/iterator.h>
-#include <yaml-cpp/node/node.h>
+#include <yaml-cpp/iterator.h>
+#include <yaml-cpp/node.h>
 
 class BuilditConfig 
 {
