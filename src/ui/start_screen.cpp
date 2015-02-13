@@ -1,5 +1,4 @@
-#include <buildit_ui/start_screen.h>
-//#include <buildit_ros/ui_mainwindow.h>
+#include <buildit_ui/ui/start_screen.h>
 
 //public static
 MyViz * StartScreen::visualizationDisplay;

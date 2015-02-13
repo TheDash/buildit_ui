@@ -22,8 +22,8 @@
 #include <QtGui/QToolBar>
 #include <QtGui/QTreeView>
 #include <QtGui/QWidget>
-#include <buildit_ui/myviz.h>
-#include <buildit_ui/start_screen_tab_widget.h>
+#include <buildit_ui/ui/myviz.h>
+#include <buildit_ui/ui/start_screen_tab_widget.h>
 
 QT_BEGIN_NAMESPACE
 

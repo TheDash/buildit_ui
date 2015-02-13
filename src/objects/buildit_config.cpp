@@ -1,6 +1,6 @@
-#include <buildit_ui/buildit_config.h>
+#include <buildit_ui/objects/buildit_config.h>
 
-void operator >> (const YAML::Node& node, MountPoints& mount_points);	
+/* void operator >> (const YAML::Node& node, MountPoints& mount_points);	
 void operator >> (const YAML::Node& node, MountPoint& mount_point);
 void operator >> (const YAML::Node& node, MountPointMarker& marker);
 void operator >> (const YAML::Node& node, geometry_msgs::Point& position);
@@ -10,46 +10,7 @@ YAML::Emitter& operator << (YAML::Emitter& out, geometry_msgs::Point& position);
 YAML::Emitter& operator << (YAML::Emitter& out, MountPointMarker&);
 YAML::Emitter& operator << (YAML::Emitter& out, MountPoints&);
 YAML::Emitter& operator << (YAML::Emitter& out, MountPoint&);
-
-MountPoints::MountPoints()
-{
-
-
-}
-
-MountPoints::~MountPoints()
-{
-
-
-}
-
-
-MountPoint::MountPoint()
-{
-
-
-
-}
-
-MountPoint::~MountPoint()
-{
-
-
-}
-
-
-MountPointMarker::MountPointMarker()
-{
-
-
-}
-
-MountPointMarker::~MountPointMarker()
-{
-
-
-}
-
+*/
 
 BuilditConfig::~BuilditConfig()
 {

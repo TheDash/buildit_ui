@@ -32,7 +32,7 @@
 #include <buildit_msgs/SetOrientation.h>
 #include <buildit_msgs/SetPosition.h>
 #include <buildit_msgs/UpdateInteractiveMountPoint.h>
-#include <buildit_ui/buildit_config.h>
+#include <buildit_ui/objects/buildit_config.h>
 
 #include <visualization_msgs/InteractiveMarkerControl.h>
 #include <visualization_msgs/InteractiveMarker.h>

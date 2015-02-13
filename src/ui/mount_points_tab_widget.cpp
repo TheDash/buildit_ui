@@ -1,5 +1,5 @@
-#include <buildit_ui/mount_points_tab_widget.h>
-#include <buildit_ui/start_screen.h>	
+#include <buildit_ui/ui/mount_points_tab_widget.h>
+#include <buildit_ui/ui/start_screen.h>	
 using namespace visualization_msgs;
 
 
@@ -296,7 +296,7 @@ void MountPointsTabWidget::create_mount_point_marker_from_yaml(std::string paren
          mp_msg.request.parent_position.y = pose.position.y;
          mp_msg.request.parent_position.z = pose.position.z;
 
-         ROS_INFO("Requesting to create marker %s at X: %f Y: %f Z: %f", link_name.c_str(), pose.position.x, pose.position.y, pose.position.z);
+         ROS_INFO("Requesting to create marker %s at X: %i Y: %i Z: %i", link_name.c_str(), pose.position.x, pose.position.y, pose.position.z);
 
          // Send the call 
          if (client.call(mp_msg))
@@ -321,7 +321,7 @@ void MountPointsTabWidget::create_mount_point_marker(std::string link_name, geom
          mp_msg.request.parent_position.y = pose.position.y;
          mp_msg.request.parent_position.z = pose.position.z;
 
-         ROS_INFO("Requesting to create marker %s at X: %f Y: %f Z: %f", link_name.c_str(), pose.position.x, pose.position.y, pose.position.z);
+         ROS_INFO("Requesting to create marker %s at X: %i Y: %i Z: %i", link_name.c_str(), pose.position.x, pose.position.y, pose.position.z);
 
          // Send the call 
          if (client.call(mp_msg))
@@ -362,7 +362,7 @@ void MountPointsTabWidget::create_mount_points_button_clicked()
          // Send the call 
          if (client.call(mp_msg))
          {
-            ROS_INFO("Created marker %s", mp_msg.request.link_name.c_str());
+            ROS_INFO("Attempting to create marker %s", mp_msg.request.link_name.c_str());
          }
          else
          {

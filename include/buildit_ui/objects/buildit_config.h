@@ -7,55 +7,21 @@
 #include <fstream>
 #include <iostream>
 
-#include <QProcess>
 #include <QString>
+#include <QProcess>
 
 #include <ros/ros.h>
 
 #include <geometry_msgs/Pose.h>
+
 #include <buildit_msgs/GetInteractiveMarkers.h>
+#include <buildit_ui/objects/mount_point_marker.h>
+#include <buildit_ui/objects/mount_point.h>
+#include <buildit_ui/objects/mount_points.h>
 
 #include <yaml-cpp/yaml.h>
-#include <yaml-cpp/iterator.h>
-#include <yaml-cpp/node.h>
-
-class MountPointMarker
-{
-   public:
-       MountPointMarker();
-       ~MountPointMarker();
-
-       // the link name is the link that the marker is relative to. 
-       std::string link_name;
-   
-       // The marker name is the string that is shown on screen and a way to acces that specific marker.
-       std::string marker_name;
-       // The ID is the number after the marker name in the screen. 
-       int marker_id;
-       geometry_msgs::Pose pose;
-       static int number_of_markers;
-};
-
-class MountPoint
-{
-   public:
-       MountPoint();
-       ~MountPoint();
-       std::string link_location;
-       std::vector<MountPointMarker> mount_point_markers;
-};
-
-class MountPoints
-{
-    public:
-        MountPoints();
-        ~MountPoints();
-        std::map<std::string, MountPoint> mount_points;
-        inline void add_mount_point(std::string link_location, MountPoint& p) { mount_points.insert(std::pair<std::string, MountPoint>(link_location, p)); }
-        //inline void has_mount_point(MountPoint & p)
-
-};
-
+#include <yaml-cpp/node/iterator.h>
+#include <yaml-cpp/node/node.h>
 
 class BuilditConfig 
 {
@@ -70,9 +36,9 @@ class BuilditConfig
       inline bool canEditPositions() { return edit_positions == "true" ? true : false; }
       inline bool canEditOrientation() { return edit_orientation == "true" ? true : false; }
       inline bool canEditModel() { return modify_model == "true" ? true : false; }
-      MountPoints mount_points;
+      MountPoints::MountPoints mount_points;
 
-      inline MountPoints getMountPoints() { return mount_points; }
+      inline MountPoints::MountPoints getMountPoints() { return mount_points; }
       //inline std::map<std::string, std::vector<geometry_msgs::Pose> > getMountPoints() { return mount_points; }
     
       void load(std::string name);
@@ -83,8 +49,7 @@ class BuilditConfig
       std::string name;
       std::string model_path;
       // A map of links that have mount points, and where those mount points are positioned.
-      //MountPointsMap mount_points;
-      std::vector<MountPointMarker> mount_point_markers;
+      std::vector<MountPointMarker::MountPointMarker> mount_point_markers;
       std::string edit_positions;
       std::string edit_orientation;
       std::string modify_model;
